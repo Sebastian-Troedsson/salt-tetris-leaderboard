@@ -1,0 +1,29 @@
+.add-player-form {
+  width: 100%;
+}
+
+.add-player-input {
+  width: 80%;
+  height: 50px;
+  border: none;
+  border-radius: 0 0 0 10px;
+  background-color: #55286F;
+  padding-left: 10px;
+  color: #fff;
+  outline: none;
+}
+
+.add-player-button {
+  width: 20%;
+  height: 50px;
+  border: none;
+  border-radius: 0 0 10px 0;
+  background-color: #A986CE;
+  color: #fff;
+  cursor: pointer;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 1; /* Firefox */
+}

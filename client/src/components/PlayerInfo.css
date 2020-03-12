@@ -1,0 +1,20 @@
+.player-info {
+  position: relative;
+  padding: 20px;
+}
+
+.player-info-stats-container {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.player-info-stats {
+  width: 50%;
+}
+
+.buttons {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}

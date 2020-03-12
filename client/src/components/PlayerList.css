@@ -1,0 +1,26 @@
+.playerList {
+  max-height: 75vh;
+  overflow: scroll;
+}
+
+.player-position {
+  width: 5%;
+}
+
+.player-row {
+  display: flex;
+  padding: 5px;
+}
+
+.playerName {
+  width: 65%;
+}
+
+.playerWon, .playerLoss, .playerScore {
+  width: 10%;
+}
+
+.dark {
+  background-color: #020202;
+  color: #fff;
+}
