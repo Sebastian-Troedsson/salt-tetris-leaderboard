@@ -31,18 +31,24 @@ function NewGame({ player, history, changeGameCard, updatePlayer, checkForName }
 
   return (
     <div className="new-game fade-in">
-      <p>{player.name}</p>
+      <h3 className="form-title">Add new game</h3>
       {wrongInput ? <p>There is no player with this name</p> : null}
       <form onSubmit={handleSubmit}>  
         <label for="opponent">
-          Who was your opponent
+          <h4>Who was your opponent?</h4>
           <input type="text" id="opponent" value={inputValue} onChange={handleChange}/>
         </label>
-          Did you win?
-          Yes <input type="radio" name="outcome" onChange={() => setWin(true)}/>
-          No <input type="radio" name="outcome" onChange={() => setWin(false)}/>
-          <input type="submit" value="submit" />
-          <button onClick={() => changeGameCard()}>Back</button>
+          <h4>Did you win?</h4>
+          <div className="radio">
+            <input type="radio" name="outcome" required onChange={() => setWin(true)}/>
+            <p>Yes</p>
+          </div>
+          <div className="radio">
+            <input type="radio" name="outcome" required onChange={() => setWin(false)}/>
+            <p>No</p>
+          </div>
+          <input type="submit" value="Add" />
+          <button onClick={() => changeGameCard()}>Cancel</button>
       </form>
 
     </div>

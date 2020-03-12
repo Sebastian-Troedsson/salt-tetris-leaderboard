@@ -10,6 +10,31 @@ export default function PlayerInfo(props) {
   const position = props.players.indexOf(player);
   const [newGameCard, setNewGameCard] = useState(false);
 
+  const findNemesis = () => {
+    if (player.games.length === 0) {
+      return 'No games played';
+    }
+    const names = player.games.filter(game => !game.win).map(loss => loss.opponent);
+    let mf = 1;
+    let m = 0;
+    let item;
+
+    for (let i = 0; i < names.length; i++) {
+      for (let j = i; j < names.length; j++) {
+        if (names[i] === names[j]) {
+          m++;
+        }
+        if (mf < m) {
+          mf = m;
+          item = names[i];
+        }
+      }
+      m = 0;
+    }
+
+    return item || 'Undefeated';
+  }
+
   const handleClick = () => {
     setNewGameCard(!newGameCard);
   };
@@ -22,7 +47,13 @@ export default function PlayerInfo(props) {
     <div className="player-info">
       {newGameCard ? <NewGame checkForName={props.checkForName} updatePlayer={props.updatePlayer} changeGameCard={changeGameCard} player={player}/> : null}
       <div className="fade-in">
-        <h1 className="player-info-name">{player.name}</h1>
+        <div className="buttons delete-button">
+          <NavLink to="/" onClick={() => props.removePlayer(id)} className="delete-button">Delete</NavLink>
+        </div>
+        <div className="player-info-title">
+          <h1 className="player-info-name">{player.name}</h1>
+          <h2>Score Progression</h2>
+        </div>
         <div className="player-info-stats-container">
           <div className="player-info-stats">
             <ul>
@@ -30,15 +61,14 @@ export default function PlayerInfo(props) {
               <li>Games won: {player.won}</li>
               <li>Games lost: {player.loss}</li>
               <li>Total games played: {player.won + player.loss}</li>
-              <li>Nemesis:</li>
+              <li>Nemesis: {findNemesis()}</li>
               <li>Joined: {player.joined}</li>
             </ul>
           </div>
           <PlayerChart player={player}/>
         </div>
-        <div className="buttons">
+        <div className="buttons margin">
           <NavLink to="/">Back</NavLink>
-          <NavLink to="/" onClick={() => props.removePlayer(id)} className="delete-button">Delete</NavLink>
           <a href="#" onClick={handleClick}>New Game</a>
         </div>
       </div>

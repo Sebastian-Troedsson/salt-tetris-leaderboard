@@ -2,19 +2,21 @@ import React from 'react'
 import { Chart } from 'react-charts';
 
 export default function PlayerChart({ player }) {
-  console.log(player.games);
 
   const createDataForChart = () => {
-    const data = [player.games.map(game => {
-      return []
-    })]
+    let score = 0;
+    const data = player.games.map((game, index) => {
+      return [index + 1, game.win ? ++score : --score];
+    });
+    data.unshift([0, 0]);
+    return data;
   };
 
   const data = React.useMemo(
     () => [
       {
         label: 'Series 1',
-        data: [[0, 1], [1, 2], [2, 4], [3, 2], [4, 7]]
+        data: createDataForChart()
       },
     ],
     []
@@ -33,7 +35,7 @@ export default function PlayerChart({ player }) {
       width: '400px',
       height: '300px'
     }}>
-      <Chart data={data} axes={axes} />
+      <Chart data={data} axes={axes}/>
     </div>
   )
 }

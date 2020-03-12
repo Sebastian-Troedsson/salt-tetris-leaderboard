@@ -7,7 +7,7 @@ export default function Player({ player, position }) {
         <div className="playerName">{ player.name }</div>
         <div className="playerWon">{ player.won }</div>
         <div className="playerLoss">{ player.loss }</div>
-        <div className="playerscore">{ player.score }</div>
+        <div className="player-score">{ player.score }</div>
       </div>
   )
 }

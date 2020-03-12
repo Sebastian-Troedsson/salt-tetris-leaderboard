@@ -3,7 +3,7 @@
 }
 
 .header-title {
-  background-color: #55286F;
+  background-color: #6d00c1;
   width:80%;
   padding: 15px;
   color: #FFF;
@@ -11,8 +11,13 @@
 }
 
 .header-stats {
-  background-color: #A986CE;
+  background-color: #48027e;
   width: 20%;
   color: white;
   border-radius: 0 10px 0 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid black;
 }

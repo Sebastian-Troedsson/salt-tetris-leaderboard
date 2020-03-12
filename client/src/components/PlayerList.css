@@ -5,19 +5,30 @@
 
 .player-position {
   width: 5%;
+  border-right: 1px solid black;
 }
 
 .player-row {
   display: flex;
   padding: 5px;
+  border-bottom: 1px solid rgb(194, 191, 191);
+  color: #000;
 }
 
 .playerName {
   width: 65%;
+  margin-left: 5px;
+  border-right: 1px solid black;
 }
 
 .playerWon, .playerLoss, .playerScore {
   width: 10%;
+  border-right: 1px solid black;
+  margin-left: 5px;
+}
+
+.player-score {
+  margin-left: 5px;
 }
 
 .dark {

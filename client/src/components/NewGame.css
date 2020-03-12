@@ -6,7 +6,27 @@
   left: 0;
   right: 0;
   margin: auto;
-  margin-top: 50px;
-  width: 50%;
+  margin-top: 20px;
+  width: 70%;
+  padding: 10px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  line-height: 30px;
+}
+
+.new-game form {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+}
+
+.radio p {
+  margin-left: 5px;
+}
+
+.form-title {
+  text-align: center;
 }
